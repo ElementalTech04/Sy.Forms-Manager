@@ -1,0 +1,50 @@
+# Ignore general operating system files
+__pycache__/
+*.pyc
+
+# Ignore environment and interpreter files
+.env
+*.venv
+venv/
+.env.bak
+*.egg-info/
+
+# Ignore editor and IDE files
+.vscode/
+.idea/
+
+# Ignore generated files and folders
+__pycache__/
+dist/
+build/
+*.egg-info/
+*.egg
+
+# Ignore Poetry files
+__pypackages__/
+poetry.lock
+poetry.toml
+
+# Ignore local development configuration
+*.sqlite3
+
+# Ignore Python virtual environments
+.venv/
+venv/
+
+# Ignore development-specific files
+*.log
+*.db
+
+# Ignore FastAPI generated files (optional)
+app/__pycache__/
+app/db.sqlite3
+
+# Ignore generated Docker files (optional)
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Ignore deployment scripts and configurations (e.g., for Heroku, AWS, etc.)
+*.env.deploy
+*.config.deploy

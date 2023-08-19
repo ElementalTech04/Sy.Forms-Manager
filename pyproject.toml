@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "fastapi-forms-manager"
+version = "0.1.0"
+description = ""
+authors = ["Frankie Rodriguez <rfrankie@gmail.com>"]
+readme = "README.md"
+packages = [{include = "fastapi"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+fastapi = "^0.100.1"
+uvicorn = "^0.23.2"
+boto3 = "^1.28.30"
+psycopg2-binary = "^2.9.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
