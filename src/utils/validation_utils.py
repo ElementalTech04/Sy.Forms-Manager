@@ -14,27 +14,6 @@ class ValidationUtils:
         return re.match(email_regex, email) is not None
 
     @staticmethod
-    def is_valid_password(password):
-        """
-        Validate a password.
-        """
-        if not password:
-            return False
-        # Password must be at least 8 characters long, contain at least one uppercase letter,
-        # one lowercase letter, one digit, and one special character.
-        if len(password) < 8:
-            return False
-        if not any(char.isupper() for char in password):
-            return False
-        if not any(char.islower() for char in password):
-            return False
-        if not any(char.isdigit() for char in password):
-            return False
-        if not any(char in '!@#$%^&*()-_=+{}[]|:;"/?.>,<`~' for char in password):
-            return False
-        return True
-
-    @staticmethod
     def is_valid_username(username):
         """
         Validate a username.
