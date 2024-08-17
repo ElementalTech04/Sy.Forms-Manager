@@ -1,8 +1,8 @@
 from fastapi import FastAPI
-from controller import contact_controller
+from routers import contact_controller
 
 app = FastAPI()
 
 
-app.include_router(contact_controller.router, prefix="/contactForms")
+app.include_router(contact_controller.router, prefix="/form/contact")
 

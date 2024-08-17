@@ -9,7 +9,6 @@ router = APIRouter()
 
 
 # Global variables
-form_type = FormType.CONTACT
 email_invalid_message = "Email is not valid"
 spam_check_failed_message = "Nice try, but you are not allowed to submit this form"
 
@@ -29,17 +28,18 @@ def submit_contact_form(request: Request, form_request: FormSubmissionRequest):
         validation_failed_response["statusCode"] = HTTPStatusCodes.FORBIDDEN
         return validation_failed_response
 
-    form_request = {
-        **form_request,
-        "formType": form_type,
-
-    }
     form_service = ContactFormService()
-    save_response = form_service.save_form(form_request)
-    if (save_response["status"] == "failed"):
-        validation_failed_response["errorMessage"] = save_response["errorMessage"]
+    save_response = {}
+
+    try:
+        save_response = form_service.save_form(form_request)
+    except Exception as e:
+        print(e)
+        validation_failed_response["errorMessage"] = e
         validation_failed_response["status"] = FormSubmissionStatus.FAILED
         validation_failed_response["statusCode"] = HTTPStatusCodes.INTERNAL_SERVER_ERROR
         return validation_failed_response
+
     response = {"data", save_response, "statusCode", HTTPStatusCodes.CREATED, "status", FormSubmissionStatus.SUCCESS}
+
     return response
