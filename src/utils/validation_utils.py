@@ -35,8 +35,4 @@ class ValidationUtils:
             return exists
 
     @staticmethod
-    def check_http_header(header_value, expected_value):
-        """
-        Check if the HTTP header value matches the expected value.
-        """
-        return header_value == expected_value
+    def
