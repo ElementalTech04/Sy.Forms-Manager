@@ -2,10 +2,10 @@ import os
 from contextlib import contextmanager
 
 import psycopg2
-from dotenv import load_dotenv
+from dotenv import python_dotenv
 
 # Load environment variables from a .env file
-load_dotenv()
+python_dotenv()
 
 
 class Database:
