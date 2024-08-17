@@ -34,5 +34,6 @@ class ValidationUtils:
             exists = await connection.fetchval(query, value)
             return exists
 
-    @staticmethod
-    def
+    @classmethod
+    def check_spam_on_db(cls, param):
+        pass

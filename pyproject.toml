@@ -13,6 +13,7 @@ uvicorn = "^0.23.2"
 boto3 = "^1.28.30"
 psycopg2 = "^2.9.9"
 python-dotenv = "^1.0.1"
+querybuilder = "^0.1.1"
 
 
 [build-system]
