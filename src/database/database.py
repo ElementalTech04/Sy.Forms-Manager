@@ -1,13 +1,6 @@
 import os
 from contextlib import contextmanager
 
-import psycopg2
-from dotenv import python_dotenv
-
-# Load environment variables from a .env file
-python_dotenv()
-
-
 class Database:
     _instance = None
 
