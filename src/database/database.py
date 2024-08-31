@@ -1,6 +1,9 @@
 import os
 from contextlib import contextmanager
 
+from psycopg2 import connect
+
+
 class Database:
     _instance = None
 
@@ -19,7 +22,7 @@ class Database:
 
     @contextmanager
     def get_connection(self):
-        connection = psycopg2.connect(
+        connection = connect(
             dbname=self.db_name,
             user=self.db_user,
             password=self.db_password,
